@@ -13,4 +13,24 @@ describe('input', () => {
       });
     });
   });
+
+  it('throws errors for invalid ', () => {
+    const input1 = ['-a', 'testing 1-2-3'];
+    const input2 = ['-a', 'I like green eggs and ham!'];
+    const input3 = ['-a', '!@#$%(&'];
+    const inputList = [input1, input2, input3];
+    inputList.forEach(arr => {
+      expect(inputParser(arr)).toEqual({
+        action: 'add',
+        payload: arr[1],
+      });
+    });
+  });
+});
+
+describe('notesHandler', () => {
+  it('console logs', () => {
+    jest.spyOn(global.console, 'log');
+    
+  });
 });
