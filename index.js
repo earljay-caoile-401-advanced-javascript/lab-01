@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const inputParser = require('./lib/input.js');
 const notesHandler = require('./lib/notes.js');
 

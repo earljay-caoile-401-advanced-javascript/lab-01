@@ -2,18 +2,21 @@
   "name": "notes",
   "version": "1.0.0",
   "description": "Lab 01 for CF JS 401 Nights",
+  "bin": {
+    "notes": "index.js"
+  },
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "dependencies": {
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "uuid": "^7.0.2"
   },
   "devDependencies": {
     "jest": "^25.1.0"
   },
   "scripts": {
-    "start": "node index.js -- --",
     "test": "jest --verbose --coverage",
     "lint": "eslint '**/*.js'"
   },
