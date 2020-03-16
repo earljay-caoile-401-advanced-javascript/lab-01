@@ -1,6 +1,6 @@
 {
   "name": "@unfie555/notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lab 01 for CF JS 401 Nights",
   "bin": {
     "notes": "index.js"
