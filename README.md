@@ -26,4 +26,4 @@ To install the package from npm, run `npm i eoc-notes` from the home directory.
 
 #### UML
 
-![UML Image](lab-01-UML.png "uml diagram")
+![UML Image](lab-01-uml.jpg "uml diagram")
