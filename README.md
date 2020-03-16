@@ -9,6 +9,7 @@
 - [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/1)
 - [GitHub Actions](https://github.com/earljay-caoile-401-advanced-javascript/notes/actions)
 - [npm package](https://www.npmjs.com/package/@unfie555/notes)
+- [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
 
 #### Documentation
 
@@ -21,6 +22,7 @@ To run locally, run `npm i` from the root directory.
 To install the package from npm, run `npm i @unfie555/notes` from the root directory.
 
 ### How to use package
+
 Once the package is installed through npm or ran locally through the repo, enter commands using the following format: `notes -a 'blah blah blah'`. You should see a console log saying something like `adding the following: blah blah blah`
 
 At this time, only the -a flag works. Any other flags will return an exception. Leaving the string argument empty will also result in an exception.
