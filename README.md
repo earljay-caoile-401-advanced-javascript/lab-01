@@ -20,9 +20,14 @@
 To run locally, run `npm i` from the root directory.
 To install the package from npm, run `npm i @unfie555/notes` from the root directory.
 
+### How to use package
+Once the package is installed through npm or ran locally through the repo, enter commands using the following format: `notes -a 'blah blah blah'`. You should see a console log saying something like `adding the following: blah blah blah`
+
+At this time, only the -a flag works. Any other flags will return an exception. Leaving the string argument empty will also result in an exception.
+
 #### Tests
 
-- Testing command: `npm test` from the root directory 
+- Testing command: `npm test` from the root directory. As of March 16, 2020, code coverage should be 100%.
 
 #### UML
 
