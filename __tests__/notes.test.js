@@ -1,3 +1,5 @@
+'use strict';
+
 const notesHandler = require('../lib/notes.js');
 
 beforeEach(() => {

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+'use strict';
+
 const inputParser = require('./lib/input.js');
 const notesHandler = require('./lib/notes.js');
 

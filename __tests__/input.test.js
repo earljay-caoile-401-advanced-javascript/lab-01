@@ -1,3 +1,5 @@
+'use strict';
+
 const inputParser = require('../lib/input.js');
 
 describe('input', () => {
