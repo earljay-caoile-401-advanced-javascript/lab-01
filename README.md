@@ -8,7 +8,7 @@
 
 - [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/1)
 - [GitHub Actions](https://github.com/earljay-caoile-401-advanced-javascript/notes/actions)
-- [eoc-notes npm package](https://www.npmjs.com/package/eoc-notes)
+- [npm package](https://www.npmjs.com/package/@unfie555/notes)
 
 #### Documentation
 
@@ -17,12 +17,12 @@
 
 ### Setup
 
-To run locally, run `npm i` from the home directory.
-To install the package from npm, run `npm i eoc-notes` from the home directory.
+To run locally, run `npm i` from the root directory.
+To install the package from npm, run `npm i @unfie555/notes` from the root directory.
 
 #### Tests
 
-- Testing command: `npm test`
+- Testing command: `npm test` from the root directory 
 
 #### UML
 
