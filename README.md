@@ -29,7 +29,7 @@ At this time, only the -a flag works. Any other flags will return an exception. 
 
 #### Tests
 
-- Testing command: `npm test` from the root directory. As of March 16, 2020, code coverage should be 100%.
+- Testing command: `npm test` from the root directory.
 
 #### UML
 
