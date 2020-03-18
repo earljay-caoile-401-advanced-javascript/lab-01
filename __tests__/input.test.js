@@ -24,7 +24,7 @@ describe('input', () => {
     inputList.forEach(arr => {
       if (arr[0] !== '-a') {
         expect(() => inputParser(arr)).toThrowError('error: invalid flag');
-      } else if (!arr[1]) {
+      } else if (!arr[1] || !arr[1].length) {
         expect(() => inputParser(arr)).toThrowError('error: no text');
       }
     });
