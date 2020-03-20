@@ -14,7 +14,7 @@ describe('notesHandler', () => {
       payload: 'I like green eggs and ham!',
     };
     expect(() => notesHandler(inputObj)).not.toThrow();
-    expect(console.log).toHaveBeenCalled(); 
+    expect(console.log).toHaveBeenCalled();
   });
 
   it('does not console log for a non-add', () => {
@@ -23,7 +23,9 @@ describe('notesHandler', () => {
       payload: 'I like green eggs and ham!',
     };
 
-    expect(() => notesHandler(inputObj)).toThrowError('error: action not found');
+    expect(() => notesHandler(inputObj)).toThrowError(
+      'error: action not found',
+    );
     expect(console.log).not.toHaveBeenCalled();
   });
 });

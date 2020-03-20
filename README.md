@@ -1,6 +1,6 @@
-# LAB - Node Ecosystem (01)
+# LAB - Classes, Inheritance, Functional Programming (02)
 
-## A Half-Hearted Attempt at TDD
+## Notes - Rev 02
 
 ### Author: Earl Jay Caoile
 

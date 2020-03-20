@@ -21,7 +21,7 @@ describe('input', () => {
     const input2 = ['-a'];
     const input3 = ['-a', ''];
     const input4 = ['-a', '1337'];
-    const input5 = ['-a', 'false']
+    const input5 = ['-a', 'false'];
 
     const invalidFlag = 'error: invalid flag';
     const noText = 'error: no text';
