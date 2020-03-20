@@ -20,13 +20,17 @@ describe('input', () => {
     const input1 = ['-b', 'testing 1-2-3'];
     const input2 = ['-a'];
     const input3 = ['-a', ''];
-    const inputList = [input1, input2, input3];
-    inputList.forEach(arr => {
-      if (arr[0] !== '-a') {
-        expect(() => inputParser(arr)).toThrowError('error: invalid flag');
-      } else if (!arr[1] || !arr[1].length) {
-        expect(() => inputParser(arr)).toThrowError('error: no text');
-      }
-    });
+    const input4 = ['-a', '1337'];
+    const input5 = ['-a', 'false']
+
+    const invalidFlag = 'error: invalid flag';
+    const noText = 'error: no text';
+    const invalidType = 'error: invalid payload type';
+
+    expect(() => inputParser(input1)).toThrowError(invalidFlag);
+    expect(() => inputParser(input2)).toThrowError(noText);
+    expect(() => inputParser(input3)).toThrowError(noText);
+    expect(() => inputParser(input4)).toThrowError(invalidType);
+    expect(() => inputParser(input5)).toThrowError(invalidType);
   });
 });
