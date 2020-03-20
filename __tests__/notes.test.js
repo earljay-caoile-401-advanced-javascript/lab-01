@@ -13,9 +13,8 @@ describe('notesHandler', () => {
       action: 'add',
       payload: 'I like green eggs and ham!',
     };
-
-    notesHandler(inputObj);
-    expect(console.log).toHaveBeenCalled();
+    expect(() => notesHandler(inputObj)).not.toThrow();
+    expect(console.log).toHaveBeenCalled(); 
   });
 
   it('does not console log for a non-add', () => {
@@ -24,7 +23,7 @@ describe('notesHandler', () => {
       payload: 'I like green eggs and ham!',
     };
 
-    notesHandler(inputObj);
+    expect(() => notesHandler(inputObj)).toThrowError('error: action not found');
     expect(console.log).not.toHaveBeenCalled();
   });
 });
