@@ -10,7 +10,9 @@
     "lib": "lib"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "minimist": "^1.2.5",
+    "mongoose": "^5.9.5",
     "uuid": "^7.0.2"
   },
   "devDependencies": {
