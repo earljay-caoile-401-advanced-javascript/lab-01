@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/1)
+- [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/2)
 - [GitHub Actions](https://github.com/earljay-caoile-401-advanced-javascript/notes/actions)
 - [npm package](https://www.npmjs.com/package/@unfie555/notes)
 - [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
