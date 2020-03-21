@@ -9,12 +9,13 @@
 - [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/2)
 - [GitHub Actions](https://github.com/earljay-caoile-401-advanced-javascript/notes/actions)
 - [npm package](https://www.npmjs.com/package/@unfie555/notes)
-- [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
 
 #### Documentation
 
 - [how to publish packages](https://zellwk.com/blog/publish-to-npm/)
 - [minimist GitHub repo](https://github.com/substack/minimist)
+- [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
+- [Jest Documentation](https://jestjs.io/docs/en/configuration)
 
 ### Setup
 
