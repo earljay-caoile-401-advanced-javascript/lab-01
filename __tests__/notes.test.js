@@ -13,7 +13,8 @@ describe('notesHandler', () => {
       action: 'add',
       payload: 'I like green eggs and ham!',
     };
-    expect(() => notesHandler(inputObj)).not.toThrow();
+    const notesObj = notesHandler(inputObj);
+    expect(notesObj.isValid()).toBeTruthy();
     expect(console.log).toHaveBeenCalled();
   });
 

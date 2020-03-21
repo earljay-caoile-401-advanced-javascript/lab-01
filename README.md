@@ -1,6 +1,6 @@
 # LAB - Classes, Inheritance, Functional Programming (02)
 
-## Notes - Rev 02
+## Notes - Rev 02: Taking your notes and spitting them back out to you!
 
 ### Author: Earl Jay Caoile
 
@@ -33,4 +33,4 @@ At this time, only the -a or -add flag works. Any other flags will return an exc
 
 #### UML
 
-![UML Image](lab-01-uml.jpg "uml diagram")
+![UML Image](lab-02-uml.jpg "uml diagram")
