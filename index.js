@@ -15,26 +15,32 @@ const runProgram = async () => {
     const notesObj = require('./lib/notes/notes.js');
     const catObj = require('./lib/categories/categories.js');
 
-    console.log('inputObj before the switch:', inputObj);
+    console.log('input object:', inputObj);
     switch (inputObj.action) {
       case 'add':
-        let oneCat = await catObj.schema.findOne({ name: inputObj.category });
-        if (oneCat) {
-          console.log('Cat exists!', oneCat);
-        } else {
-          console.log('no cat present! creating a new one');
-          const newCat = {
-            name: inputObj.category,
-          };
-          oneCat = await catObj.create(newCat);
-        }
-        const createInput = {
-          action: inputObj.action,
+        let createInput = {
+          action: 'add',
           payload: inputObj.payload,
-          category: [oneCat._id],
         };
+        if (inputObj.category) {
+          let oneCat = await catObj.schema.findOne({ name: inputObj.category });
+          if (oneCat) {
+            console.log('Catgory exists:', oneCat);
+          } else {
+            console.log('No cat present! Creating a new one...');
+            const newCat = {
+              name: inputObj.category,
+            };
+            oneCat = await catObj.create(newCat);
+          }
 
-        await notesObj.handleInput(createInput);
+          createInput.category = [oneCat._id];
+        } else {
+          createInput.category = new Array();
+        }
+
+        const createRes = await notesObj.handleInput(createInput);
+        console.log('successfully added the following:', createRes);
         break;
       case 'list':
         let notesList;
