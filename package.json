@@ -10,6 +10,7 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@code-fellows/supergoose": "^1.0.2",
     "dotenv": "^8.2.0",
     "minimist": "^1.2.5",
     "mongoose": "^5.9.5",
@@ -21,6 +22,9 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "lint": "eslint '**/*.js'"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",

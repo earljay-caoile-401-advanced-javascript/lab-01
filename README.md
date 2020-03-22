@@ -1,6 +1,6 @@
 # LAB - Classes, Inheritance, Functional Programming (02)
 
-## Notes - Rev 02: Taking your notes and spitting them back out to you!
+## Notes - Rev 03: Taking your notes and spitting them back out to you!
 
 ### Author: Earl Jay Caoile
 
@@ -16,6 +16,8 @@
 - [minimist GitHub repo](https://github.com/substack/minimist)
 - [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
 - [Jest Documentation](https://jestjs.io/docs/en/configuration)
+- [mongoose close connection](https://stackoverflow.com/questions/15999999/mongoose-close-connection/16000730#16000730)
+- [Why we need toJSON when comparing to two components equality?](https://stackoverflow.com/questions/47361668/why-we-need-tojson-when-comparing-to-two-components-equality)
 
 ### Setup
 

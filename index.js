@@ -10,11 +10,12 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 const runProgram = async () => {
-  const inputObj = require('./lib/input.js')(process.argv.slice(2));
-  const notesObj = require('./lib/notes/notes.js');
-  const catObj = require('./lib/categories/categories.js');
-
   try {
+    const inputObj = require('./lib/input.js')(process.argv.slice(2));
+    const notesObj = require('./lib/notes/notes.js');
+    const catObj = require('./lib/categories/categories.js');
+
+    console.log('inputObj before the switch:', inputObj);
     switch (inputObj.action) {
       case 'add':
         let oneCat = await catObj.schema.findOne({ name: inputObj.category });
@@ -27,12 +28,13 @@ const runProgram = async () => {
           };
           oneCat = await catObj.create(newCat);
         }
-        const noteInput = {
+        const createInput = {
           action: inputObj.action,
           payload: inputObj.payload,
           category: [oneCat._id],
         };
-        await notesObj.handleInput(noteInput);
+
+        await notesObj.handleInput(createInput);
         break;
       case 'list':
         let notesList;
@@ -44,10 +46,11 @@ const runProgram = async () => {
           });
 
           if (oneCat) {
-            notesList = await notesObj.handleInput(inputObj);
-            notesList = notesList.filter(note =>
-              note.category.includes(oneCat._id),
-            );
+            notesList = await notesObj
+              .handleInput(inputObj)
+              .then(allNotes =>
+                allNotes.filter(note => note.category.includes(oneCat._id)),
+              );
           }
         } else {
           console.log('listing all notes:');
@@ -63,12 +66,18 @@ const runProgram = async () => {
         }
         break;
       case 'delete':
+        const deleted = await notesObj.handleInput(inputObj);
+        if (deleted) {
+          console.log('successfully deleted the following:', deleted);
+        } else {
+          throw 'error: note with the given ID does not exist';
+        }
         break;
       default:
-        break;
+        throw 'error: no flag';
     }
   } catch (e) {
-    console.error('Error:', e);
+    console.error(e);
   } finally {
     mongoose.disconnect();
   }
