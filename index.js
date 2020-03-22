@@ -14,28 +14,64 @@ const runProgram = async () => {
   const notesObj = require('./lib/notes/notes.js');
   const catObj = require('./lib/categories/categories.js');
 
-  if (inputObj.action && inputObj.category) {
-    const newCat = {
-      name: inputObj.category,
-    };
-    const createdCat = await catObj.create(newCat);
-    const noteInput = {
-      action: inputObj.action,
-      payload: inputObj.payload,
-      category: [createdCat._id],
-    };
+  try {
+    switch (inputObj.action) {
+      case 'add':
+        let oneCat = await catObj.schema.findOne({ name: inputObj.category });
+        if (oneCat) {
+          console.log('Cat exists!', oneCat);
+        } else {
+          console.log('no cat present! creating a new one');
+          const newCat = {
+            name: inputObj.category,
+          };
+          oneCat = await catObj.create(newCat);
+        }
+        const noteInput = {
+          action: inputObj.action,
+          payload: inputObj.payload,
+          category: [oneCat._id],
+        };
+        await notesObj.handleInput(noteInput);
+        break;
+      case 'list':
+        let notesList;
 
-    await notesObj.handleInput(noteInput);
+        if (inputObj.category) {
+          console.log(`listing notes under the ${inputObj.category} category:`);
+          const oneCat = await catObj.schema.findOne({
+            name: inputObj.category,
+          });
+
+          if (oneCat) {
+            notesList = await notesObj.handleInput(inputObj);
+            notesList = notesList.filter(note =>
+              note.category.includes(oneCat._id),
+            );
+          }
+        } else {
+          console.log('listing all notes:');
+          notesList = await notesObj.handleInput(inputObj);
+        }
+
+        if (notesList) {
+          notesList.forEach(item => {
+            console.log(item);
+          });
+        } else {
+          console.log('no notes to list');
+        }
+        break;
+      case 'delete':
+        break;
+      default:
+        break;
+    }
+  } catch (e) {
+    console.error('Error:', e);
+  } finally {
+    mongoose.disconnect();
   }
-  mongoose.disconnect();
 };
 
 runProgram();
-// const inputObj = require('./lib/input.js')([
-//   '-a',
-//   'testing 1-2-3',
-//   '-c',
-//   'school',
-// ]);
-
-// mongoose.disconnect();
