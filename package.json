@@ -1,0 +1,34 @@
+{
+  "name": "@unfie555/notes",
+  "version": "1.0.5",
+  "description": "Lab 01 for CF JS 401 Nights",
+  "bin": {
+    "notes": "index.js"
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "lint": "eslint '**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earljay-caoile-401-advanced-javascript/notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/earljay-caoile-401-advanced-javascript/notes/issues"
+  },
+  "homepage": "https://github.com/earljay-caoile-401-advanced-javascript/notes#readme"
+}
