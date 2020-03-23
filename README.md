@@ -33,7 +33,7 @@ PORT=3000
 ```
 - start your database with the path of the DB along with the folder location for your DB files (`mongod --dbpath=/Users/path/to/data/db`: i.e. `"C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="D:\db"` on Windows)
 
-### How to use package
+#### How to use package
 
 Once the package is installed through npm or ran locally through the repo, users can enter the following commands:
 
@@ -47,10 +47,10 @@ Users can list notes from the database
 Users can delete a single note
 - `notes -d insertIDhere555`
 
-#### Tests
+### Tests
 
 - Testing command: `npm test` from the root directory.
 
-#### UML
+### UML
 
 ![UML Image](lab-03-uml.jpg "uml diagram")
