@@ -1,6 +1,6 @@
 # LAB - Data Modeling & NoSQL Databases (03)
 
-## Rev 03: CRD (that's right, no update yet) with Notes and CR with Categories
+## Notes Rev 03: CRD (that's right, no update yet) with Notes and CR with Categories
 
 ### Author: Earl Jay Caoile
 
