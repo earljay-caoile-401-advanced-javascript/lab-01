@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/2)
+- [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/3)
 - [GitHub Actions](https://github.com/earljay-caoile-401-advanced-javascript/notes/actions)
 - [npm package](https://www.npmjs.com/package/@unfie555/notes)
 
