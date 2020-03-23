@@ -57,19 +57,26 @@ describe('input', () => {
     const input5 = ['-a', 'false'];
     const input6 = ['-l', '555'];
     const input7 = ['-d'];
+    const input8 = ['-d', '360'];
 
     const invalidFlag = 'error: invalid flag';
-    const noText = 'error: add is missing payload';
-    const invalidPayload = 'error: invalid payload type';
-    const invalidCategory = 'error: invalid category';
-    const missingDeleteID = 'error: delete is missing id';
+    const noTextAdd = 'error: missing param for add';
+    const invalidTextAdd =
+      'error: invalid param type for add (must be a string)';
+    const noTextDelete = 'error: missing param for delete';
+    const invalidTextDelete =
+      'error: invalid param type for delete (must be a string)';
+
+    const invalidCategory =
+      'error: invalid param type for list (must be a string)';
 
     expect(() => inputParser(input1)).toThrowError(invalidFlag);
-    expect(() => inputParser(input2)).toThrowError(noText);
-    expect(() => inputParser(input3)).toThrowError(noText);
-    expect(() => inputParser(input4)).toThrowError(invalidPayload);
-    expect(() => inputParser(input5)).toThrowError(invalidPayload);
+    expect(() => inputParser(input2)).toThrowError(noTextAdd);
+    expect(() => inputParser(input3)).toThrowError(noTextAdd);
+    expect(() => inputParser(input4)).toThrowError(invalidTextAdd);
+    expect(() => inputParser(input5)).toThrowError(invalidTextAdd);
     expect(() => inputParser(input6)).toThrowError(invalidCategory);
-    expect(() => inputParser(input7)).toThrowError(missingDeleteID);
+    expect(() => inputParser(input7)).toThrowError(noTextDelete);
+    expect(() => inputParser(input8)).toThrowError(invalidTextDelete);
   });
 });

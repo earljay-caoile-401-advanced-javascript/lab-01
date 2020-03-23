@@ -27,7 +27,9 @@ const runProgram = async () => {
           if (oneCat) {
             console.log('Catgory exists:', oneCat);
           } else {
-            console.log('No cat present! Creating a new one...');
+            console.log(
+              `No ${inputObj.category} category present! Creating a new one...`,
+            );
             const newCat = {
               name: inputObj.category,
             };
@@ -64,7 +66,7 @@ const runProgram = async () => {
             console.log('listing all notes:');
           }
         }
-        
+
         if (notesList && notesList.length) {
           notesList.forEach(item => {
             console.log(item);
