@@ -1,6 +1,6 @@
-# LAB - Classes, Inheritance, Functional Programming (02)
+# LAB - LAB: Data Modeling & NoSQL Databases (03)
 
-## Notes - Rev 03: Taking your notes and spitting them back out to you!
+## Notes - Rev 03: CRD (that's right, no update yet) with Notes and CR with Categories
 
 ### Author: Earl Jay Caoile
 
@@ -36,4 +36,4 @@ At this time, only the -a or -add flag works. Any other flags will return an exc
 
 #### UML
 
-![UML Image](lab-02-uml.jpg "uml diagram")
+![UML Image](lab-03-uml.jpg 'uml diagram')

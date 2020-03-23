@@ -26,7 +26,9 @@ describe('input', () => {
     const input1 = ['-l', 'test notes'];
     const input2 = ['-l', 'Dr. Seuss'];
     const input3 = ['-l'];
-    const inputList = [input1, input2, input3];
+    const input4 = ['--list', '360noscope'];
+
+    const inputList = [input1, input2, input3, input4];
     inputList.forEach(arr => {
       expect(inputParser(arr)).toEqual({
         action: 'list',
@@ -55,15 +57,15 @@ describe('input', () => {
     const input5 = ['-a', 'false'];
     const input6 = ['l', '555'];
 
-    const invalidFlag = 'error: invalid flag or incorrect input passed';
+    const invalidInput = 'error: invalid flag or incorrect input passed';
     const noText = 'error: no text';
     const invalidPayload = 'error: invalid payload type';
 
-    expect(() => inputParser(input1)).toThrowError(invalidFlag);
+    expect(() => inputParser(input1)).toThrowError(invalidInput);
     expect(() => inputParser(input2)).toThrowError(noText);
     expect(() => inputParser(input3)).toThrowError(noText);
     expect(() => inputParser(input4)).toThrowError(invalidPayload);
     expect(() => inputParser(input5)).toThrowError(invalidPayload);
-    expect(() => inputParser(input6)).toThrowError(invalidFlag);
+    expect(() => inputParser(input6)).toThrowError(invalidInput);
   });
 });
