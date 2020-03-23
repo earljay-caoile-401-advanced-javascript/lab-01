@@ -1,6 +1,6 @@
-# LAB - LAB: Data Modeling & NoSQL Databases (03)
+# LAB - Data Modeling & NoSQL Databases (03)
 
-## Notes - Rev 03: CRD (that's right, no update yet) with Notes and CR with Categories
+## Rev 03: CRD (that's right, no update yet) with Notes and CR with Categories
 
 ### Author: Earl Jay Caoile
 
@@ -26,9 +26,17 @@ To install the package from npm, run `npm i @unfie555/notes` from the root direc
 
 ### How to use package
 
-Once the package is installed through npm or ran locally through the repo, enter commands using the following formats: `notes -a 'blah blah blah'` or `notes -add 'blah blah blah'`. You should see a console log saying something like `adding the following: blah blah blah`
+Once the package is installed through npm or ran locally through the repo, users can enter the following commands:
 
-At this time, only the -a or -add flag works. Any other flags will return an exception. Leaving the string argument empty will also result in an exception.
+When a user adds a new note, it is saved to the database
+- `notes -add “This is fun” –category school`
+
+Users can list notes from the database
+- All Notes: `notes --list` or `notes -l`
+- Notes in a category: `notes --list school` or `notes -l school`
+
+Users can delete a single note
+- `notes -d insertIDhere555`
 
 #### Tests
 
@@ -36,4 +44,4 @@ At this time, only the -a or -add flag works. Any other flags will return an exc
 
 #### UML
 
-![UML Image](lab-03-uml.jpg 'uml diagram')
+![UML Image](lab-03-uml.jpg "uml diagram")
