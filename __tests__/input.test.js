@@ -55,17 +55,21 @@ describe('input', () => {
     const input3 = ['-a', ''];
     const input4 = ['-a', '1337'];
     const input5 = ['-a', 'false'];
-    const input6 = ['l', '555'];
+    const input6 = ['-l', '555'];
+    const input7 = ['-d'];
 
-    const invalidInput = 'error: invalid flag or incorrect input passed';
-    const noText = 'error: no text';
+    const invalidFlag = 'error: invalid flag';
+    const noText = 'error: add is missing payload';
     const invalidPayload = 'error: invalid payload type';
+    const invalidCategory = 'error: invalid category';
+    const missingDeleteID = 'error: delete is missing id';
 
-    expect(() => inputParser(input1)).toThrowError(invalidInput);
+    expect(() => inputParser(input1)).toThrowError(invalidFlag);
     expect(() => inputParser(input2)).toThrowError(noText);
     expect(() => inputParser(input3)).toThrowError(noText);
     expect(() => inputParser(input4)).toThrowError(invalidPayload);
     expect(() => inputParser(input5)).toThrowError(invalidPayload);
-    expect(() => inputParser(input6)).toThrowError(invalidInput);
+    expect(() => inputParser(input6)).toThrowError(invalidCategory);
+    expect(() => inputParser(input7)).toThrowError(missingDeleteID);
   });
 });

@@ -59,11 +59,13 @@ const runProgram = async () => {
               );
           }
         } else {
-          console.log('listing all notes:');
           notesList = await notesObj.handleInput(inputObj);
+          if (notesList.length) {
+            console.log('listing all notes:');
+          }
         }
-
-        if (notesList) {
+        
+        if (notesList && notesList.length) {
           notesList.forEach(item => {
             console.log(item);
           });
