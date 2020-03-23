@@ -31,6 +31,9 @@ To install the package from npm, run `npm i @unfie555/notes` from the root direc
 MONGODB_URI=mongodb://localhost:27017/notes
 PORT=3000
 ```
+
+Note that this .env will not come pre-configured as part of the npm published package, so the URL has been hardcoded into mongoose.connect as a backup option.
+
 - start your database with the path of the DB along with the folder location for your DB files (`mongod --dbpath=/Users/path/to/data/db`: i.e. `"C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="D:\db"` on Windows)
 
 #### How to use package
