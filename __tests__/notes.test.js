@@ -9,18 +9,18 @@ describe('Notes collection', () => {
     payload: 'here is a test object',
     category: 'abc1234',
   };
-  
+
   const inputObj2 = {
     action: 'add',
     payload: 'got another test object',
     category: 'abc123',
   };
-  
+
   const inputObj3 = {
     action: 'list',
     category: 'abc123',
   };
-  
+
   const inputObj4 = {
     action: 'grableh!',
     category: 'vomit',
@@ -36,7 +36,7 @@ describe('Notes collection', () => {
 
   it('can create a note and add it to the database', async () => {
     let createRes = await notesObj.handleInput(inputObj1);
-    
+
     expect(inputObj1.payload).toEqual(createRes.text);
     expect(inputObj1.category).toEqual(createRes.category[0]);
   });
@@ -67,6 +67,8 @@ describe('Notes collection', () => {
   });
 
   it('can handle invalid actions', async () => {
-    expect(() => notesObj.handleInput(inputObj4)).toThrowError('error: invalid action');
+    expect(() => notesObj.handleInput(inputObj4)).toThrowError(
+      'error: invalid action',
+    );
   });
 });
