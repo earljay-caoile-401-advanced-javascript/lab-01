@@ -38,8 +38,8 @@ describe('input', () => {
   });
 
   it('handle objects with the proper -d flag', () => {
-    const input1 = ['-d', 'abc123'];
-    const input2 = ['-d', 'xyz555'];
+    const input1 = ['-d', '5e798d779de2842b2c606be4'];
+    const input2 = ['-d', '5e798d779de2842b2c606be3'];
     const inputList = [input1, input2];
     inputList.forEach(arr => {
       expect(inputParser(arr)).toEqual({

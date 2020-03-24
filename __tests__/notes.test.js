@@ -26,6 +26,11 @@ describe('Notes collection', () => {
     category: 'vomit',
   };
 
+  const inputObj5 = {
+    action: 'delete',
+    idToDelete: 'abc123',
+  };
+
   beforeEach(() => {
     jest.spyOn(global.console, 'log');
   });
@@ -69,6 +74,12 @@ describe('Notes collection', () => {
   it('can handle invalid actions', async () => {
     expect(() => notesObj.handleInput(inputObj4)).toThrowError(
       'error: invalid action',
+    );
+  });
+
+  it('can handle invalid IDs for delete', async () => {
+    expect(() => notesObj.handleInput(inputObj5)).toThrowError(
+      'error: invalid ID format',
     );
   });
 });
