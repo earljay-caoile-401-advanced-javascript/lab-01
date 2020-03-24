@@ -79,6 +79,8 @@ const runProgram = async () => {
         const deleted = await notesObj.handleInput(inputObj);
         if (deleted) {
           console.log('successfully deleted the following:', deleted);
+        } else {
+          console.log('that ID does not exist');
         }
         break;
       default:
