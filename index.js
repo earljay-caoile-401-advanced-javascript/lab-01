@@ -15,7 +15,6 @@ const runProgram = async () => {
     const notesObj = require('./lib/notes/notes.js');
     const catObj = require('./lib/categories/categories.js');
 
-    console.log('input object:', inputObj);
     switch (inputObj.action) {
       case 'add':
         let createInput = {

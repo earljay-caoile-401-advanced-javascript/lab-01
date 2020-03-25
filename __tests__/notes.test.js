@@ -31,8 +31,19 @@ describe('Notes collection', () => {
     idToDelete: 'abc123',
   };
 
+  const inputObj6 = {
+    action: 'add',
+    category: 134235,
+    someOtherProp: true,
+  };
+
+  console.log = jest.fn();
+  console.error = jest.fn();
+
   beforeEach(() => {
     jest.spyOn(global.console, 'log');
+    jest.spyOn(global.console, 'error');
+
   });
 
   afterEach(async () => {
@@ -79,7 +90,10 @@ describe('Notes collection', () => {
 
   it('can handle invalid IDs for delete', async () => {
     expect(() => notesObj.handleInput(inputObj5)).toThrowError(
-      'error: invalid ID format',
+      'error: invalid ID format (not an ObjectId)',
     );
+
+     await notesObj.handleInput(inputObj6);
+     expect(console.error).toHaveBeenCalled();
   });
 });
