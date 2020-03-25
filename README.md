@@ -23,7 +23,7 @@
 ### Setup
 
 To run locally, run `npm i` from the root directory.
-To install the package from npm, run `npm i @unfie555/notes` from the root directory.
+To install the package from npm, run `npm i @unfie555/notes` from the root directory. A package.json needs to exist for this to work. If it hasn't been created yet, create with `npm init`. Alternatively, you can create a package.json file with default by adding the -y flag: `npm init -y`
 
 #### Configuring MongoDB
 
