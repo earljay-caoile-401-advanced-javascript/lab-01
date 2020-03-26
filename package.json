@@ -21,7 +21,8 @@
   },
   "scripts": {
     "test": "jest --verbose --coverage",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint",
+    "watch": "jest --watchAll --coverage --verbose"
   },
   "jest": {
     "testEnvironment": "node"
