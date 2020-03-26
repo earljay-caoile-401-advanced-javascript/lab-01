@@ -41,7 +41,6 @@ const runProgram = async () => {
         }
 
         await notesObj.handleInput(createInput);
-        // console.log('successfully added the following:', createRes);
         break;
       case 'list':
         let notesList;
@@ -77,6 +76,7 @@ const runProgram = async () => {
       case 'delete':
         const deleted = await notesObj.handleInput(inputObj);
         if (deleted) {
+          console.log('Successfully deleted the following:', deleted);
         } else {
           console.error('Error: that ID does not exist');
         }
