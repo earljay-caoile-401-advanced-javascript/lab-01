@@ -40,14 +40,14 @@ const runProgram = async () => {
           createInput.category = new Array();
         }
 
-        const createRes = await notesObj.handleInput(createInput);
-        console.log('successfully added the following:', createRes);
+        await notesObj.handleInput(createInput);
+        // console.log('successfully added the following:', createRes);
         break;
       case 'list':
         let notesList;
 
         if (inputObj.category) {
-          console.log(`listing notes under the ${inputObj.category} category:`);
+          console.log(`Listing notes under the ${inputObj.category} category:`);
           const oneCat = await catObj.schema.findOne({
             name: inputObj.category,
           });
@@ -62,7 +62,7 @@ const runProgram = async () => {
         } else {
           notesList = await notesObj.handleInput(inputObj);
           if (notesList.length) {
-            console.log('listing all notes:');
+            console.log('Listing all notes:');
           }
         }
 
@@ -71,15 +71,14 @@ const runProgram = async () => {
             console.log(item);
           });
         } else {
-          console.log('no notes to list');
+          console.log('No notes to list!');
         }
         break;
       case 'delete':
         const deleted = await notesObj.handleInput(inputObj);
         if (deleted) {
-          console.log('successfully deleted the following:', deleted);
         } else {
-          console.log('that ID does not exist');
+          console.error('Error: that ID does not exist');
         }
         break;
       default:

@@ -43,7 +43,6 @@ describe('Notes collection', () => {
   beforeEach(() => {
     jest.spyOn(global.console, 'log');
     jest.spyOn(global.console, 'error');
-
   });
 
   afterEach(async () => {
@@ -93,7 +92,20 @@ describe('Notes collection', () => {
       'error: invalid ID format (not an ObjectId)',
     );
 
-     await notesObj.handleInput(inputObj6);
-     expect(console.error).toHaveBeenCalled();
+    await notesObj.handleInput(inputObj6);
+    expect(console.error).toHaveBeenCalled();
+  });
+
+  it('can update (even thoough we have not integrated it into our app)', async () => {
+    const createdObj1 = await notesObj.handleInput(inputObj1);
+    const editedObj = {
+      category: ['not_a_real_cat_id_but_edited'],
+      text: 'edited object text',
+    };
+    await notesObj.update(createdObj1._id, editedObj);
+    const getRes = await notesObj.get(createdObj1._id);
+    console.log('here is getRes:', getRes);
+    expect(getRes.text).toEqual(editedObj.text);
+    expect(getRes.category[0]).toEqual(editedObj.category[0]);
   });
 });
