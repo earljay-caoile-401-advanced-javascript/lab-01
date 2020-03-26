@@ -1,6 +1,6 @@
 # LAB: Advanced Mongo/Mongoose (04)
 
-## Notes Rev 04: CRD (that's right, no update yet) with collection abstraction (officially) and some polishes
+## Notes Rev 04: CRD (update there, but not used) with collection abstraction (officially) and some polishes
 
 ### Author: Earl Jay Caoile
 
