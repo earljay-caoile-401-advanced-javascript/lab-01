@@ -13,8 +13,8 @@ describe('notesHandler', () => {
       action: 'add',
       payload: 'I like green eggs and ham!',
     };
-
-    notesHandler(inputObj);
+    const notesObj = notesHandler(inputObj);
+    expect(notesObj.isValid()).toBeTruthy();
     expect(console.log).toHaveBeenCalled();
   });
 
@@ -24,7 +24,9 @@ describe('notesHandler', () => {
       payload: 'I like green eggs and ham!',
     };
 
-    notesHandler(inputObj);
+    expect(() => notesHandler(inputObj)).toThrowError(
+      'error: action not found',
+    );
     expect(console.log).not.toHaveBeenCalled();
   });
 });

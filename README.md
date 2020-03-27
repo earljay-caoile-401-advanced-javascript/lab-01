@@ -1,20 +1,21 @@
-# LAB - Node Ecosystem (01)
+# LAB - Classes, Inheritance, Functional Programming (02)
 
-## A Half-Hearted Attempt at TDD
+## Notes - Rev 02: Taking your notes and spitting them back out to you!
 
 ### Author: Earl Jay Caoile
 
 ### Links and Resources
 
-- [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/1)
+- [submission PR](https://github.com/earljay-caoile-401-advanced-javascript/notes/pull/2)
 - [GitHub Actions](https://github.com/earljay-caoile-401-advanced-javascript/notes/actions)
 - [npm package](https://www.npmjs.com/package/@unfie555/notes)
-- [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
 
 #### Documentation
 
 - [how to publish packages](https://zellwk.com/blog/publish-to-npm/)
 - [minimist GitHub repo](https://github.com/substack/minimist)
+- [JSDoc Official Documentation](https://jsdoc.app/about-getting-started.html)
+- [Jest Documentation](https://jestjs.io/docs/en/configuration)
 
 ### Setup
 
@@ -33,4 +34,4 @@ At this time, only the -a or -add flag works. Any other flags will return an exc
 
 #### UML
 
-![UML Image](lab-01-uml.jpg "uml diagram")
+![UML Image](lab-02-uml.jpg "uml diagram")
