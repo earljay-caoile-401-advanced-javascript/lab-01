@@ -1,7 +1,7 @@
 {
   "name": "@unfie555/notes",
-  "version": "1.1.1",
-  "description": "Lab 02 for CF JS 401 Nights",
+  "version": "2.0.2",
+  "description": "Lab 03 for CF JS 401 Nights",
   "bin": {
     "notes": "index.js"
   },
@@ -10,7 +10,10 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@code-fellows/supergoose": "^1.0.2",
+    "dotenv": "^8.2.0",
     "minimist": "^1.2.5",
+    "mongoose": "^5.9.5",
     "uuid": "^7.0.2"
   },
   "devDependencies": {
@@ -19,6 +22,9 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "lint": "eslint '**/*.js'"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
