@@ -15,7 +15,6 @@ const runProgram = async () => {
     const notesObj = require('./lib/notes/notes.js');
     const catObj = require('./lib/categories/categories.js');
 
-    console.log('input object:', inputObj);
     switch (inputObj.action) {
       case 'add':
         let createInput = {
@@ -27,7 +26,9 @@ const runProgram = async () => {
           if (oneCat) {
             console.log('Catgory exists:', oneCat);
           } else {
-            console.log('No cat present! Creating a new one...');
+            console.log(
+              `No ${inputObj.category} category present! Creating a new one...`,
+            );
             const newCat = {
               name: inputObj.category,
             };
@@ -39,14 +40,13 @@ const runProgram = async () => {
           createInput.category = new Array();
         }
 
-        const createRes = await notesObj.handleInput(createInput);
-        console.log('successfully added the following:', createRes);
+        await notesObj.handleInput(createInput);
         break;
       case 'list':
         let notesList;
 
         if (inputObj.category) {
-          console.log(`listing notes under the ${inputObj.category} category:`);
+          console.log(`Listing notes under the ${inputObj.category} category:`);
           const oneCat = await catObj.schema.findOne({
             name: inputObj.category,
           });
@@ -59,24 +59,26 @@ const runProgram = async () => {
               );
           }
         } else {
-          console.log('listing all notes:');
           notesList = await notesObj.handleInput(inputObj);
+          if (notesList.length) {
+            console.log('Listing all notes:');
+          }
         }
 
-        if (notesList) {
+        if (notesList && notesList.length) {
           notesList.forEach(item => {
             console.log(item);
           });
         } else {
-          console.log('no notes to list');
+          console.log('No notes to list!');
         }
         break;
       case 'delete':
         const deleted = await notesObj.handleInput(inputObj);
         if (deleted) {
-          console.log('successfully deleted the following:', deleted);
+          console.log('Successfully deleted the following:', deleted);
         } else {
-          throw 'error: note with the given ID does not exist';
+          console.error('Error: that ID does not exist');
         }
         break;
       default:

@@ -38,8 +38,8 @@ describe('input', () => {
   });
 
   it('handle objects with the proper -d flag', () => {
-    const input1 = ['-d', 'abc123'];
-    const input2 = ['-d', 'xyz555'];
+    const input1 = ['-d', '5e798d779de2842b2c606be4'];
+    const input2 = ['-d', '5e798d779de2842b2c606be3'];
     const inputList = [input1, input2];
     inputList.forEach(arr => {
       expect(inputParser(arr)).toEqual({
@@ -55,17 +55,28 @@ describe('input', () => {
     const input3 = ['-a', ''];
     const input4 = ['-a', '1337'];
     const input5 = ['-a', 'false'];
-    const input6 = ['l', '555'];
+    const input6 = ['-l', '555'];
+    const input7 = ['-d'];
+    const input8 = ['-d', '360'];
 
-    const invalidInput = 'error: invalid flag or incorrect input passed';
-    const noText = 'error: no text';
-    const invalidPayload = 'error: invalid payload type';
+    const invalidFlag = 'error: invalid flag';
+    const noTextAdd = 'error: missing param for add';
+    const invalidTextAdd =
+      'error: invalid param type for add (must be a string)';
+    const noTextDelete = 'error: missing param for delete';
+    const invalidTextDelete =
+      'error: invalid param type for delete (must be a string)';
 
-    expect(() => inputParser(input1)).toThrowError(invalidInput);
-    expect(() => inputParser(input2)).toThrowError(noText);
-    expect(() => inputParser(input3)).toThrowError(noText);
-    expect(() => inputParser(input4)).toThrowError(invalidPayload);
-    expect(() => inputParser(input5)).toThrowError(invalidPayload);
-    expect(() => inputParser(input6)).toThrowError(invalidInput);
+    const invalidCategory =
+      'error: invalid param type for list (must be a string)';
+
+    expect(() => inputParser(input1)).toThrowError(invalidFlag);
+    expect(() => inputParser(input2)).toThrowError(noTextAdd);
+    expect(() => inputParser(input3)).toThrowError(noTextAdd);
+    expect(() => inputParser(input4)).toThrowError(invalidTextAdd);
+    expect(() => inputParser(input5)).toThrowError(invalidTextAdd);
+    expect(() => inputParser(input6)).toThrowError(invalidCategory);
+    expect(() => inputParser(input7)).toThrowError(noTextDelete);
+    expect(() => inputParser(input8)).toThrowError(invalidTextDelete);
   });
 });

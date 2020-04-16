@@ -1,6 +1,6 @@
 {
   "name": "@unfie555/notes",
-  "version": "2.0.2",
+  "version": "2.2.1",
   "description": "Lab 03 for CF JS 401 Nights",
   "bin": {
     "notes": "index.js"
@@ -21,7 +21,8 @@
   },
   "scripts": {
     "test": "jest --verbose --coverage",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint",
+    "watch": "jest --watchAll --coverage --verbose"
   },
   "jest": {
     "testEnvironment": "node"
